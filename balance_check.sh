@@ -2,11 +2,18 @@
 
 # Version: Delta-3
 
-# Check input balance
+# Check input balance. Can accept input pub key: './balance_check.sh <pub_key>'
 # Requirements: 'apt install jq'
 # Requirements: `Provide Public Key Hex` in to `INPUT_HEX` variable below.
 
-INPUT_HEX='PUBLIC_KEY_HEX'
+if [[ "${#1}" -eq 64 ]]; then
+   INPUT_HEX="$1"
+else
+   INPUT_HEX='PUB KEY TO CHECK'
+   echo && echo -e "${CYAN}Input HEX: ${GREEN}$INPUT_HEX${NC}" && echo
+   exit 0
+fi
+
 
 # -----------------------------------------------------------------------
 
