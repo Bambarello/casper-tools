@@ -6,14 +6,7 @@
 # Requirements: 'apt install jq'
 # Requirements: `Provide Public Key Hex` in to `INPUT_HEX` variable below.
 
-if [[ "${#1}" -eq 64 ]]; then
-   INPUT_HEX="$1"
-else
-   INPUT_HEX='YOU NEED TO PROVIDE PUB KEY TO CHECK'
-   echo && echo -e "${CYAN}Input HEX: ${GREEN}$INPUT_HEX${NC}" && echo
-   exit 0
-fi
-
+INPUT_HEX="$1"
 
 # -----------------------------------------------------------------------
 
